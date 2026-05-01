@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Bus": {
+      "title": "Bus",
+      "description": "Represents a physical vehicle in transit.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "routeId": { "type": "string" },
+        "lat": { "type": "number" },
+        "lng": { "type": "number" },
+        "status": { "type": "string" },
+        "driverId": { "type": "string" },
+        "lastUpdated": { "type": "number", "description": "Timestamp" }
+      },
+      "required": ["id", "routeId", "lat", "lng", "status", "driverId", "lastUpdated"]
+    },
+    "Route": {
+      "title": "Route",
+      "description": "Transit route definitions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "color": { "type": "string" }
+      },
+      "required": ["id", "name", "color"]
+    }
+  },
+  "firestore": {
+    "/buses/{busId}": {
+      "schema": "Bus",
+      "description": "Live tracking data for buses."
+    },
+    "/routes/{routeId}": {
+      "schema": "Route",
+      "description": "Pre-defined transport routes."
+    }
+  }
+}

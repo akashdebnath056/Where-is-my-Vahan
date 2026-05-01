@@ -1,0 +1,8 @@
+{
+  "name": "Where is my Vahan",
+  "description": "A local transport tracker app to show real-time bus locations, schedules, and ETAs.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
